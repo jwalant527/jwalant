@@ -3,33 +3,27 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { useState } from 'react';
-import { FiMail, FiPhone, FiMapPin, FiSend, FiGithub, FiLinkedin, FiTwitter } from 'react-icons/fi';
+import { FiMail, FiMapPin, FiSend, FiGithub, FiLinkedin, FiTwitter } from 'react-icons/fi';
 
 const contactInfo = [
   {
     icon: FiMail,
     title: 'Email',
-    value: 'hello@johndoe.com',
-    href: 'mailto:hello@johndoe.com',
-  },
-  {
-    icon: FiPhone,
-    title: 'Phone',
-    value: '+1 (555) 123-4567',
-    href: 'tel:+15551234567',
+    value: 'jwalantbhatt1998@gmail.com',
+    href: 'mailto:jwalantbhatt1998@gmail.com',
   },
   {
     icon: FiMapPin,
     title: 'Location',
-    value: 'San Francisco, CA',
+    value: 'Memphis, TN',
     href: '#',
   },
 ];
 
 const socialLinks = [
-  { icon: FiGithub, href: '#', label: 'GitHub' },
-  { icon: FiLinkedin, href: '#', label: 'LinkedIn' },
-  { icon: FiTwitter, href: '#', label: 'Twitter' },
+  { icon: FiGithub, href: 'https://github.com/jwalant527', label: 'GitHub' },
+  { icon: FiLinkedin, href: 'https://www.linkedin.com/in/jwalantb/', label: 'LinkedIn' },
+  { icon: FiTwitter, href: 'https://twitter.com/jwalant527', label: 'Twitter' },
 ];
 
 export default function Contact() {

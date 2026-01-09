@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import { useState, useEffect } from 'react';
 import { FiGithub, FiLinkedin, FiMail, FiArrowDown } from 'react-icons/fi';
 
-const roles = ['Full Stack Developer', 'UI/UX Enthusiast', 'Problem Solver', 'Creative Thinker'];
+const roles = ['DevOps Enthusiast', 'Platform Engineer at NIH', 'FIFA fanatic'];
 
 export default function Hero() {
   const [currentRole, setCurrentRole] = useState(0);
@@ -72,7 +72,7 @@ export default function Hero() {
                 transition={{ delay: 0.3 }}
                 className="text-5xl md:text-7xl font-bold text-dark-900 dark:text-white mb-4"
               >
-                John Doe
+                Jwalant Bhatt
               </motion.h1>
               <div className="h-12 md:h-16">
                 <motion.h2
@@ -93,9 +93,10 @@ export default function Hero() {
               transition={{ delay: 0.6 }}
               className="text-lg text-dark-600 dark:text-dark-400 max-w-lg leading-relaxed"
             >
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor
-              incididunt ut labore et dolore magna aliqua. Transforming ideas into elegant
-              digital solutions.
+              I architect the infrastructure that enables scientists and researchers to 
+              deploy faster and more reliably. As a Platform Engineer at NCBI, I maintain 
+              CI/CD systems supporting mission-critical applications that advance 
+              biomedical research worldwide.
             </motion.p>
 
             <motion.div
@@ -129,13 +130,15 @@ export default function Hero() {
               className="flex gap-4"
             >
               {[
-                { icon: FiGithub, href: '#', label: 'GitHub' },
-                { icon: FiLinkedin, href: '#', label: 'LinkedIn' },
-                { icon: FiMail, href: '#', label: 'Email' },
+                { icon: FiGithub, href: 'https://github.com/jwalant527', label: 'GitHub' },
+                { icon: FiLinkedin, href: 'https://www.linkedin.com/in/jwalantb/', label: 'LinkedIn' },
+                { icon: FiMail, href: 'mailto:jwalantbhatt1998@gmail.com', label: 'Email' },
               ].map((social, index) => (
                 <motion.a
                   key={social.label}
                   href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 1 + index * 0.1 }}
