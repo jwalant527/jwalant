@@ -7,14 +7,14 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-dark-900 dark:bg-black text-white py-8">
+    <footer className="bg-neutral-900 dark:bg-black text-white py-8 border-t border-neutral-800 dark:border-neutral-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col items-center justify-center space-y-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="flex items-center gap-2 text-dark-400"
+            className="flex items-center gap-2 text-neutral-400"
           >
             <span>Made with</span>
             <motion.div
@@ -27,7 +27,7 @@ export default function Footer() {
                 ease: 'easeInOut',
               }}
             >
-              <FiHeart className="text-red-500 fill-current" />
+              <FiHeart className="text-primary-500 fill-current" />
             </motion.div>
             <span>by Jwalant Bhatt</span>
           </motion.div>
@@ -37,7 +37,7 @@ export default function Footer() {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="text-dark-500 text-sm"
+            className="text-neutral-500 text-sm uppercase tracking-wider"
           >
             © {currentYear} All rights reserved.
           </motion.div>

@@ -57,9 +57,9 @@ export default function About() {
     <section
       id="about"
       ref={ref}
-      className="relative py-20 md:py-32 bg-white dark:bg-dark-900 overflow-hidden"
+      className="relative py-20 md:py-32 bg-neutral-50 dark:bg-neutral-950 overflow-hidden"
     >
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary-50/10 to-transparent dark:via-primary-950/10" />
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary-500/5 to-transparent dark:via-primary-500/5" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
@@ -68,10 +68,10 @@ export default function About() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-dark-900 dark:text-white mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold text-neutral-900 dark:text-white mb-4 uppercase tracking-tight">
             About <span className="text-primary-500">Me</span>
           </h2>
-          <div className="w-20 h-1 bg-gradient-to-r from-primary-500 to-purple-600 mx-auto rounded-full" />
+          <div className="w-20 h-1 bg-primary-500 mx-auto" />
         </motion.div>
 
         <div className="grid md:grid-cols-2 gap-12 mb-20">
@@ -112,16 +112,16 @@ export default function About() {
                 key={stat.label}
                 variants={itemVariants}
                 whileHover={{ scale: 1.05, x: 10 }}
-                className="flex items-center gap-4 p-4 bg-gradient-to-r from-primary-50 to-purple-50 dark:from-dark-800 dark:to-dark-800/50 rounded-xl backdrop-blur-sm border border-primary-100 dark:border-dark-700"
+                className="flex items-center gap-4 p-4 bg-neutral-100 dark:bg-neutral-900 rounded-sm border border-neutral-300 dark:border-neutral-800 hover:border-primary-500 dark:hover:border-primary-500 transition-colors"
               >
-                <div className="p-3 bg-primary-500 text-white rounded-lg">
+                <div className="p-3 bg-primary-500 text-black rounded-sm">
                   <stat.icon className="w-6 h-6" />
                 </div>
                 <div>
-                  <div className="text-2xl font-bold text-dark-900 dark:text-white">
+                  <div className="text-2xl font-bold text-neutral-900 dark:text-white">
                     {stat.value}
                   </div>
-                  <div className="text-sm text-dark-600 dark:text-dark-400">{stat.label}</div>
+                  <div className="text-sm text-neutral-600 dark:text-neutral-400">{stat.label}</div>
                 </div>
               </motion.div>
             ))}
@@ -133,7 +133,7 @@ export default function About() {
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.4 }}
         >
-          <h3 className="text-2xl md:text-3xl font-bold text-dark-900 dark:text-white mb-8 text-center">
+          <h3 className="text-2xl md:text-3xl font-bold text-neutral-900 dark:text-white mb-8 text-center uppercase tracking-tight">
             Technologies I Work With
           </h3>
           <motion.div
@@ -148,9 +148,9 @@ export default function About() {
                 variants={itemVariants}
                 whileHover={{ scale: 1.1, y: -5 }}
                 whileTap={{ scale: 0.95 }}
-                className="px-6 py-3 bg-white dark:bg-dark-800 rounded-full shadow-md hover:shadow-xl border-2 border-primary-100 dark:border-dark-700 hover:border-primary-500 dark:hover:border-primary-500 transition-all cursor-pointer"
+                className="px-6 py-3 bg-neutral-100 dark:bg-neutral-900 rounded-sm shadow-sm hover:shadow-md border border-neutral-300 dark:border-neutral-800 hover:border-primary-500 dark:hover:border-primary-500 transition-all cursor-pointer"
               >
-                <span className="text-dark-700 dark:text-dark-200 font-medium">
+                <span className="text-neutral-700 dark:text-neutral-200 font-medium uppercase text-sm tracking-wide">
                   {tech.name}
                 </span>
               </motion.div>

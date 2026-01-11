@@ -66,9 +66,9 @@ export default function Contact() {
     <section
       id="contact"
       ref={ref}
-      className="relative py-20 md:py-32 bg-white dark:bg-dark-900 overflow-hidden"
+      className="relative py-20 md:py-32 bg-neutral-50 dark:bg-neutral-950 overflow-hidden"
     >
-      <div className="absolute inset-0 bg-gradient-to-br from-primary-50/30 via-transparent to-purple-50/30 dark:from-dark-800/30 dark:via-transparent dark:to-dark-800/30" />
+      <div className="absolute inset-0 bg-gradient-to-br from-primary-500/5 via-transparent to-primary-500/5 dark:from-primary-500/5 dark:via-transparent dark:to-primary-500/5" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
@@ -77,11 +77,11 @@ export default function Contact() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-dark-900 dark:text-white mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold text-neutral-900 dark:text-white mb-4 uppercase tracking-tight">
             Get In <span className="text-primary-500">Touch</span>
           </h2>
-          <div className="w-20 h-1 bg-gradient-to-r from-primary-500 to-purple-600 mx-auto rounded-full mb-6" />
-          <p className="text-dark-600 dark:text-dark-400 max-w-2xl mx-auto text-lg">
+          <div className="w-20 h-1 bg-primary-500 mx-auto mb-6" />
+          <p className="text-neutral-600 dark:text-neutral-400 max-w-2xl mx-auto text-lg">
             Have a project in mind or want to discuss DevOps strategies? I'm always open to
             connecting with fellow enthusiasts.
           </p>
@@ -95,7 +95,7 @@ export default function Contact() {
             className="space-y-8"
           >
             <div>
-              <h3 className="text-2xl font-bold text-dark-900 dark:text-white mb-6">
+              <h3 className="text-2xl font-bold text-neutral-900 dark:text-white mb-6 uppercase tracking-tight">
                 Contact Information
               </h3>
               <div className="space-y-4">
@@ -107,14 +107,14 @@ export default function Contact() {
                     animate={inView ? { opacity: 1, x: 0 } : {}}
                     transition={{ duration: 0.5, delay: 0.3 + index * 0.1 }}
                     whileHover={{ x: 10 }}
-                    className="flex items-center gap-4 p-4 bg-gradient-to-r from-primary-50 to-purple-50 dark:from-dark-800 dark:to-dark-800/50 rounded-xl hover:shadow-lg transition-shadow border border-primary-100 dark:border-dark-700"
+                    className="flex items-center gap-4 p-4 bg-neutral-100 dark:bg-neutral-900 rounded-sm hover:shadow-md transition-shadow border border-neutral-300 dark:border-neutral-800 hover:border-primary-500 dark:hover:border-primary-500"
                   >
-                    <div className="p-3 bg-primary-500 text-white rounded-lg">
+                    <div className="p-3 bg-primary-500 text-black rounded-sm">
                       <info.icon className="w-6 h-6" />
                     </div>
                     <div>
-                      <div className="text-sm text-dark-600 dark:text-dark-400">{info.title}</div>
-                      <div className="text-dark-900 dark:text-white font-medium">{info.value}</div>
+                      <div className="text-sm text-neutral-600 dark:text-neutral-400 uppercase tracking-wide">{info.title}</div>
+                      <div className="text-neutral-900 dark:text-white font-medium">{info.value}</div>
                     </div>
                   </motion.a>
                 ))}
@@ -126,7 +126,7 @@ export default function Contact() {
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.6 }}
             >
-              <h3 className="text-2xl font-bold text-dark-900 dark:text-white mb-6">
+              <h3 className="text-2xl font-bold text-neutral-900 dark:text-white mb-6 uppercase tracking-tight">
                 Follow Me
               </h3>
               <div className="flex gap-4">
@@ -138,7 +138,7 @@ export default function Contact() {
                     animate={inView ? { opacity: 1, scale: 1 } : {}}
                     transition={{ duration: 0.3, delay: 0.7 + index * 0.1 }}
                     whileHover={{ scale: 1.1, y: -5 }}
-                    className="p-4 bg-dark-100 dark:bg-dark-800 rounded-full hover:bg-primary-500 hover:text-white dark:hover:bg-primary-500 transition-colors"
+                    className="p-4 bg-neutral-200 dark:bg-neutral-900 rounded-sm hover:bg-primary-500 hover:text-black dark:hover:bg-primary-500 transition-colors border border-neutral-300 dark:border-neutral-800"
                     aria-label={social.label}
                   >
                     <social.icon className="w-6 h-6" />
@@ -151,9 +151,9 @@ export default function Contact() {
               initial={{ opacity: 0, y: 20 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.9 }}
-              className="p-6 bg-gradient-to-br from-primary-500 to-purple-600 rounded-xl text-white"
+              className="p-6 bg-primary-500 rounded-sm text-black shadow-md shadow-primary-500/30"
             >
-              <h4 className="text-xl font-bold mb-2">Let's Build Something Great</h4>
+              <h4 className="text-xl font-bold mb-2 uppercase tracking-tight">Let's Build Something Great</h4>
               <p className="opacity-90">
                 I'm always up for talking shop.
               </p>
@@ -167,9 +167,9 @@ export default function Contact() {
           >
             <form
               onSubmit={handleSubmit}
-              className="bg-white dark:bg-dark-800 rounded-xl p-8 shadow-lg border border-primary-100 dark:border-dark-700"
+              className="bg-neutral-100 dark:bg-neutral-950 rounded-sm p-8 shadow-md border border-neutral-300 dark:border-neutral-800"
             >
-              <h3 className="text-2xl font-bold text-dark-900 dark:text-white mb-6">
+              <h3 className="text-2xl font-bold text-neutral-900 dark:text-white mb-6 uppercase tracking-tight">
                 Send Me a Message
               </h3>
 
@@ -177,7 +177,7 @@ export default function Contact() {
                 <div>
                   <label
                     htmlFor="name"
-                    className="block text-sm font-medium text-dark-700 dark:text-dark-300 mb-2"
+                    className="block text-sm font-medium text-neutral-700 dark:text-neutral-300 mb-2 uppercase tracking-wide"
                   >
                     Name
                   </label>
@@ -188,7 +188,7 @@ export default function Contact() {
                     value={formData.name}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 bg-dark-50 dark:bg-dark-700 border border-dark-200 dark:border-dark-600 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none transition-all text-dark-900 dark:text-white"
+                    className="w-full px-4 py-3 bg-neutral-200 dark:bg-neutral-900 border border-neutral-300 dark:border-neutral-800 rounded-sm focus:ring-2 focus:ring-primary-500 focus:border-primary-500 outline-none transition-all text-neutral-900 dark:text-white"
                     placeholder="John Doe"
                   />
                 </div>
@@ -196,7 +196,7 @@ export default function Contact() {
                 <div>
                   <label
                     htmlFor="email"
-                    className="block text-sm font-medium text-dark-700 dark:text-dark-300 mb-2"
+                    className="block text-sm font-medium text-neutral-700 dark:text-neutral-300 mb-2 uppercase tracking-wide"
                   >
                     Email
                   </label>
@@ -207,7 +207,7 @@ export default function Contact() {
                     value={formData.email}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 bg-dark-50 dark:bg-dark-700 border border-dark-200 dark:border-dark-600 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none transition-all text-dark-900 dark:text-white"
+                    className="w-full px-4 py-3 bg-neutral-200 dark:bg-neutral-900 border border-neutral-300 dark:border-neutral-800 rounded-sm focus:ring-2 focus:ring-primary-500 focus:border-primary-500 outline-none transition-all text-neutral-900 dark:text-white"
                     placeholder="john@example.com"
                   />
                 </div>
@@ -215,7 +215,7 @@ export default function Contact() {
                 <div>
                   <label
                     htmlFor="subject"
-                    className="block text-sm font-medium text-dark-700 dark:text-dark-300 mb-2"
+                    className="block text-sm font-medium text-neutral-700 dark:text-neutral-300 mb-2 uppercase tracking-wide"
                   >
                     Subject
                   </label>
@@ -226,7 +226,7 @@ export default function Contact() {
                     value={formData.subject}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 bg-dark-50 dark:bg-dark-700 border border-dark-200 dark:border-dark-600 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none transition-all text-dark-900 dark:text-white"
+                    className="w-full px-4 py-3 bg-neutral-200 dark:bg-neutral-900 border border-neutral-300 dark:border-neutral-800 rounded-sm focus:ring-2 focus:ring-primary-500 focus:border-primary-500 outline-none transition-all text-neutral-900 dark:text-white"
                     placeholder="Project Inquiry"
                   />
                 </div>
@@ -234,7 +234,7 @@ export default function Contact() {
                 <div>
                   <label
                     htmlFor="message"
-                    className="block text-sm font-medium text-dark-700 dark:text-dark-300 mb-2"
+                    className="block text-sm font-medium text-neutral-700 dark:text-neutral-300 mb-2 uppercase tracking-wide"
                   >
                     Message
                   </label>
@@ -245,7 +245,7 @@ export default function Contact() {
                     onChange={handleChange}
                     required
                     rows={5}
-                    className="w-full px-4 py-3 bg-dark-50 dark:bg-dark-700 border border-dark-200 dark:border-dark-600 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none transition-all resize-none text-dark-900 dark:text-white"
+                    className="w-full px-4 py-3 bg-neutral-200 dark:bg-neutral-900 border border-neutral-300 dark:border-neutral-800 rounded-sm focus:ring-2 focus:ring-primary-500 focus:border-primary-500 outline-none transition-all resize-none text-neutral-900 dark:text-white"
                     placeholder="Tell me about your project..."
                   />
                 </div>
@@ -255,7 +255,7 @@ export default function Contact() {
                   disabled={isSubmitting}
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
-                  className="w-full px-6 py-4 bg-gradient-to-r from-primary-500 to-purple-600 text-white rounded-lg font-medium shadow-lg hover:shadow-xl transition-shadow disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+                  className="w-full px-6 py-4 bg-primary-500 text-black rounded-sm font-medium shadow-md shadow-primary-500/30 hover:shadow-lg hover:shadow-primary-500/50 transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2 uppercase tracking-wider"
                 >
                   {isSubmitting ? (
                     <>

@@ -1,9 +1,8 @@
 'use client';
 
-import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { FiExternalLink, FiGithub } from 'react-icons/fi';
-import { useRef, MouseEvent } from 'react';
 
 const projects = [
   {
@@ -63,64 +62,25 @@ const projects = [
 ];
 
 function ProjectCard({ project, index }: { project: typeof projects[0]; index: number }) {
-  const cardRef = useRef<HTMLDivElement>(null);
-  const x = useMotionValue(0);
-  const y = useMotionValue(0);
-
-  const mouseXSpring = useSpring(x);
-  const mouseYSpring = useSpring(y);
-
-  const rotateX = useTransform(mouseYSpring, [-0.5, 0.5], ['7.5deg', '-7.5deg']);
-  const rotateY = useTransform(mouseXSpring, [-0.5, 0.5], ['-7.5deg', '7.5deg']);
-
-  const handleMouseMove = (e: MouseEvent<HTMLDivElement>) => {
-    if (!cardRef.current) return;
-
-    const rect = cardRef.current.getBoundingClientRect();
-    const width = rect.width;
-    const height = rect.height;
-
-    const mouseX = e.clientX - rect.left;
-    const mouseY = e.clientY - rect.top;
-
-    const xPct = mouseX / width - 0.5;
-    const yPct = mouseY / height - 0.5;
-
-    x.set(xPct);
-    y.set(yPct);
-  };
-
-  const handleMouseLeave = () => {
-    x.set(0);
-    y.set(0);
-  };
-
   return (
     <motion.div
-      ref={cardRef}
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
-      onMouseMove={handleMouseMove}
-      onMouseLeave={handleMouseLeave}
-      style={{
-        rotateX,
-        rotateY,
-        transformStyle: 'preserve-3d',
-      }}
-      className="group relative bg-white dark:bg-dark-800 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow border border-primary-100 dark:border-dark-700"
+      whileHover={{ y: -5 }}
+      className="group relative bg-neutral-100 dark:bg-neutral-950 rounded-sm overflow-hidden shadow-md hover:shadow-xl transition-all border border-neutral-300 dark:border-neutral-800 hover:border-primary-500 dark:hover:border-primary-500"
     >
-      <div className="absolute inset-0 bg-gradient-to-br from-primary-500/10 to-purple-500/10 opacity-0 group-hover:opacity-100 transition-opacity" />
+      <div className="absolute inset-0 bg-primary-500/5 opacity-0 group-hover:opacity-100 transition-opacity" />
 
-      <div className="relative p-6 md:p-8" style={{ transform: 'translateZ(50px)' }}>
+      <div className="relative p-6 md:p-8">
         <div className="text-6xl mb-4">{project.image}</div>
 
-        <h3 className="text-2xl font-bold text-dark-900 dark:text-white mb-3 group-hover:text-primary-500 dark:group-hover:text-primary-400 transition-colors">
+        <h3 className="text-2xl font-bold text-neutral-900 dark:text-white mb-3 group-hover:text-primary-500 dark:group-hover:text-primary-400 transition-colors uppercase tracking-tight">
           {project.title}
         </h3>
 
-        <p className="text-dark-600 dark:text-dark-400 mb-4 leading-relaxed">
+        <p className="text-neutral-600 dark:text-neutral-400 mb-4 leading-relaxed">
           {project.description}
         </p>
 
@@ -128,7 +88,7 @@ function ProjectCard({ project, index }: { project: typeof projects[0]; index: n
           {project.technologies.map((tech, techIndex) => (
             <span
               key={techIndex}
-              className="px-3 py-1 text-sm bg-primary-100 dark:bg-dark-700 text-primary-700 dark:text-primary-300 rounded-full font-medium"
+              className="px-3 py-1 text-sm bg-neutral-200 dark:bg-neutral-900 text-neutral-700 dark:text-neutral-300 rounded-sm font-medium border border-neutral-300 dark:border-neutral-800 uppercase tracking-wide"
             >
               {tech}
             </span>
@@ -140,19 +100,19 @@ function ProjectCard({ project, index }: { project: typeof projects[0]; index: n
             href={project.githubUrl}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="flex items-center gap-2 px-4 py-2 bg-dark-100 dark:bg-dark-700 hover:bg-dark-200 dark:hover:bg-dark-600 rounded-lg transition-colors"
+            className="flex items-center gap-2 px-4 py-2 bg-neutral-200 dark:bg-neutral-900 hover:bg-neutral-300 dark:hover:bg-neutral-800 rounded-sm transition-colors border border-neutral-300 dark:border-neutral-800 uppercase text-sm tracking-wide font-medium"
           >
             <FiGithub className="w-5 h-5" />
-            <span className="text-sm font-medium">Code</span>
+            <span>Code</span>
           </motion.a>
           <motion.a
             href={project.liveUrl}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="flex items-center gap-2 px-4 py-2 bg-primary-500 hover:bg-primary-600 text-white rounded-lg transition-colors"
+            className="flex items-center gap-2 px-4 py-2 bg-primary-500 hover:bg-primary-600 text-black rounded-sm transition-colors shadow-md shadow-primary-500/30 uppercase text-sm tracking-wide font-medium"
           >
             <FiExternalLink className="w-5 h-5" />
-            <span className="text-sm font-medium">Live Demo</span>
+            <span>Live Demo</span>
           </motion.a>
         </div>
       </div>
@@ -170,7 +130,7 @@ export default function Projects() {
     <section
       id="projects"
       ref={ref}
-      className="relative py-20 md:py-32 bg-white dark:bg-dark-900"
+      className="relative py-20 md:py-32 bg-neutral-50 dark:bg-neutral-950"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
@@ -179,11 +139,11 @@ export default function Projects() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-dark-900 dark:text-white mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold text-neutral-900 dark:text-white mb-4 uppercase tracking-tight">
             Featured <span className="text-primary-500">Projects</span>
           </h2>
-          <div className="w-20 h-1 bg-gradient-to-r from-primary-500 to-purple-600 mx-auto rounded-full mb-6" />
-          <p className="text-dark-600 dark:text-dark-400 max-w-2xl mx-auto text-lg">
+          <div className="w-20 h-1 bg-primary-500 mx-auto mb-6" />
+          <p className="text-neutral-600 dark:text-neutral-400 max-w-2xl mx-auto text-lg">
             Real-world infrastructure and automation projects I've built to solve complex
             deployment challenges and improve system reliability.
           </p>

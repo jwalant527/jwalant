@@ -41,7 +41,7 @@ export default function Experience() {
     <section
       id="experience"
       ref={ref}
-      className="relative py-20 md:py-32 bg-gradient-to-b from-primary-50/30 to-white dark:from-dark-800 dark:to-dark-900"
+      className="relative py-20 md:py-32 bg-white dark:bg-black"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
@@ -50,14 +50,14 @@ export default function Experience() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-dark-900 dark:text-white mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold text-neutral-900 dark:text-white mb-4 uppercase tracking-tight">
             Work <span className="text-primary-500">Experience</span>
           </h2>
-          <div className="w-20 h-1 bg-gradient-to-r from-primary-500 to-purple-600 mx-auto rounded-full" />
+          <div className="w-20 h-1 bg-primary-500 mx-auto" />
         </motion.div>
 
         <div className="relative">
-          <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary-500 via-purple-500 to-primary-500 md:-ml-0.5" />
+          <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-0.5 bg-primary-500 md:-ml-0.5" />
 
           {experiences.map((exp, index) => {
             const isEven = index % 2 === 0;
@@ -73,15 +73,15 @@ export default function Experience() {
                 }`}
               >
                 <div className={`flex items-start ${isEven ? 'md:flex-row-reverse' : ''} gap-4`}>
-                  <div className="absolute left-4 md:left-1/2 w-8 h-8 -ml-4 bg-primary-500 rounded-full border-4 border-white dark:border-dark-900 shadow-lg flex items-center justify-center z-10">
-                    <FiBriefcase className="w-4 h-4 text-white" />
+                  <div className="absolute left-4 md:left-1/2 w-8 h-8 -ml-4 bg-primary-500 rounded-sm border-4 border-white dark:border-black shadow-lg flex items-center justify-center z-10">
+                    <FiBriefcase className="w-4 h-4 text-black" />
                   </div>
 
                   <motion.div
                     whileHover={{ scale: 1.02 }}
                     className={`ml-12 md:ml-0 ${
                       isEven ? 'md:mr-16' : 'md:ml-16'
-                    } w-full md:w-5/12 bg-white dark:bg-dark-800 rounded-xl shadow-lg hover:shadow-2xl transition-shadow p-6 border border-primary-100 dark:border-dark-700`}
+                    } w-full md:w-5/12 bg-neutral-100 dark:bg-neutral-950 rounded-sm shadow-md hover:shadow-lg transition-shadow p-6 border border-neutral-300 dark:border-neutral-800 hover:border-primary-500 dark:hover:border-primary-500`}
                   >
                     <div
                       className={`flex items-center gap-2 text-primary-500 dark:text-primary-400 mb-2 ${
@@ -92,15 +92,15 @@ export default function Experience() {
                       <span className="text-sm font-medium">{exp.period}</span>
                     </div>
 
-                    <h3 className="text-xl md:text-2xl font-bold text-dark-900 dark:text-white mb-1">
+                    <h3 className="text-xl md:text-2xl font-bold text-neutral-900 dark:text-white mb-1">
                       {exp.title}
                     </h3>
 
-                    <h4 className="text-lg font-semibold text-primary-600 dark:text-primary-400 mb-4">
+                    <h4 className="text-lg font-semibold text-primary-500 dark:text-primary-400 mb-4">
                       {exp.company}
                     </h4>
 
-                    <p className="text-dark-600 dark:text-dark-400 mb-4 leading-relaxed">
+                    <p className="text-neutral-600 dark:text-neutral-400 mb-4 leading-relaxed">
                       {exp.description}
                     </p>
 
@@ -111,7 +111,7 @@ export default function Experience() {
                         <motion.span
                           key={techIndex}
                           whileHover={{ scale: 1.1 }}
-                          className="px-3 py-1 text-sm bg-primary-100 dark:bg-dark-700 text-primary-700 dark:text-primary-300 rounded-full font-medium"
+                          className="px-3 py-1 text-sm bg-neutral-200 dark:bg-neutral-900 text-neutral-700 dark:text-neutral-300 rounded-sm font-medium border border-neutral-300 dark:border-neutral-800 uppercase tracking-wide"
                         >
                           {tech}
                         </motion.span>

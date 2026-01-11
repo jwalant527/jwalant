@@ -44,7 +44,7 @@ export default function Navbar() {
         transition={{ duration: 0.5 }}
         className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
           scrolled
-            ? 'bg-white/80 dark:bg-dark-900/80 backdrop-blur-md shadow-lg'
+            ? 'bg-neutral-100/90 dark:bg-black/90 backdrop-blur-md shadow-lg border-b border-transparent dark:border-neutral-900'
             : 'bg-transparent'
         }`}
       >
@@ -54,9 +54,9 @@ export default function Navbar() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.2 }}
-              className="text-2xl font-bold bg-gradient-to-r from-primary-500 to-purple-600 bg-clip-text text-transparent"
+              className="text-2xl font-bold text-neutral-900 dark:text-neutral-100 uppercase tracking-wider"
             >
-              Portfolio
+              JB
             </motion.div>
 
             <div className="hidden md:flex items-center space-x-8">
@@ -67,7 +67,7 @@ export default function Navbar() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.1 * index }}
                   onClick={() => scrollToSection(item.href)}
-                  className="text-dark-700 dark:text-dark-200 hover:text-primary-500 dark:hover:text-primary-400 transition-colors duration-200 font-medium"
+                  className="text-neutral-700 dark:text-neutral-300 hover:text-primary-500 dark:hover:text-primary-400 transition-colors duration-200 font-medium uppercase text-sm tracking-wide"
                 >
                   {item.name}
                 </motion.button>
@@ -77,13 +77,13 @@ export default function Navbar() {
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ delay: 0.6 }}
                 onClick={toggleTheme}
-                className="p-2 rounded-full bg-dark-200 dark:bg-dark-700 hover:bg-dark-300 dark:hover:bg-dark-600 transition-colors duration-200"
+                className="p-2 rounded-sm bg-neutral-200 dark:bg-neutral-900 hover:bg-neutral-300 dark:hover:bg-neutral-800 transition-colors duration-200 border border-transparent dark:border-neutral-800"
                 aria-label="Toggle theme"
               >
                 {theme === 'dark' ? (
-                  <FiSun className="w-5 h-5 text-yellow-500" />
+                  <FiSun className="w-5 h-5 text-primary-500" />
                 ) : (
-                  <FiMoon className="w-5 h-5 text-dark-700" />
+                  <FiMoon className="w-5 h-5 text-neutral-700" />
                 )}
               </motion.button>
             </div>
@@ -91,13 +91,13 @@ export default function Navbar() {
             <div className="md:hidden flex items-center space-x-4">
               <button
                 onClick={toggleTheme}
-                className="p-2 rounded-full bg-dark-200 dark:bg-dark-700"
+                className="p-2 rounded-sm bg-neutral-200 dark:bg-neutral-900 border border-transparent dark:border-neutral-800"
                 aria-label="Toggle theme"
               >
                 {theme === 'dark' ? (
-                  <FiSun className="w-5 h-5 text-yellow-500" />
+                  <FiSun className="w-5 h-5 text-primary-500" />
                 ) : (
-                  <FiMoon className="w-5 h-5 text-dark-700" />
+                  <FiMoon className="w-5 h-5 text-neutral-700" />
                 )}
               </button>
               <button
@@ -123,7 +123,7 @@ export default function Navbar() {
             animate={{ x: 0 }}
             exit={{ x: '100%' }}
             transition={{ type: 'tween', duration: 0.3 }}
-            className="fixed top-0 right-0 bottom-0 w-64 bg-white dark:bg-dark-900 shadow-2xl z-50 md:hidden"
+            className="fixed top-0 right-0 bottom-0 w-64 bg-neutral-100 dark:bg-black shadow-2xl z-50 md:hidden border-l border-neutral-300 dark:border-neutral-900"
           >
             <div className="flex flex-col h-full">
               <div className="flex justify-end p-4">
@@ -143,7 +143,7 @@ export default function Navbar() {
                     animate={{ x: 0, opacity: 1 }}
                     transition={{ delay: 0.1 * index }}
                     onClick={() => scrollToSection(item.href)}
-                    className="text-left text-lg font-medium text-dark-700 dark:text-dark-200 hover:text-primary-500 dark:hover:text-primary-400 transition-colors"
+                    className="text-left text-lg font-medium text-neutral-700 dark:text-neutral-200 hover:text-primary-500 dark:hover:text-primary-400 transition-colors uppercase tracking-wide"
                   >
                     {item.name}
                   </motion.button>

@@ -46,7 +46,7 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-zinc-50 via-orange-50/30 to-amber-50/20 dark:from-zinc-950 dark:via-stone-950 dark:to-black"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-neutral-100 dark:bg-gradient-to-br dark:from-black dark:via-neutral-950 dark:to-black"
     >
       <div className="absolute inset-0 bg-grid-pattern opacity-5" />
 
@@ -108,7 +108,7 @@ export default function Hero() {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={scrollToNext}
-                className="px-8 py-3 bg-gradient-to-r from-primary-600 to-accent-500 text-white rounded-full font-medium shadow-lg shadow-orange-500/50 hover:shadow-xl hover:shadow-orange-500/60 transition-all"
+                className="px-8 py-3 bg-gradient-to-r from-primary-600 to-primary-500 text-black rounded-sm font-medium shadow-lg shadow-primary-500/30 hover:shadow-xl hover:shadow-primary-500/50 transition-all uppercase tracking-wider text-sm"
               >
                 View My Work
               </motion.button>
@@ -116,7 +116,7 @@ export default function Hero() {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={() => document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' })}
-                className="px-8 py-3 border-2 border-zinc-700 dark:border-zinc-600 text-zinc-700 dark:text-zinc-300 rounded-full font-medium hover:bg-zinc-100 dark:hover:bg-zinc-900 transition-colors"
+                className="px-8 py-3 border border-neutral-800 dark:border-neutral-700 text-neutral-800 dark:text-neutral-300 rounded-sm font-medium hover:bg-neutral-200 dark:hover:bg-neutral-900 dark:hover:border-primary-500 transition-all uppercase tracking-wider text-sm"
               >
                 Get In Touch
               </motion.button>
@@ -169,24 +169,24 @@ export default function Hero() {
                 }}
                 className="relative z-10"
               >
-                <div className="aspect-square rounded-full bg-gradient-to-br from-orange-500 to-amber-400 p-2 shadow-2xl shadow-orange-500/50">
-                  <div className="w-full h-full rounded-full bg-zinc-100 dark:bg-zinc-900 flex items-center justify-center text-6xl">
+                <div className="aspect-square rounded-sm bg-gradient-to-br from-primary-600 to-primary-500 p-0.5 shadow-2xl shadow-primary-500/20">
+                  <div className="w-full h-full rounded-sm bg-neutral-950 flex items-center justify-center text-6xl border border-neutral-900">
                     👤
                   </div>
                 </div>
               </motion.div>
 
-              <div className="absolute inset-0 bg-gradient-to-br from-orange-500/20 to-amber-400/20 rounded-full blur-3xl" />
+              <div className="absolute inset-0 bg-gradient-to-br from-primary-500/10 to-primary-600/5 rounded-sm blur-3xl" />
 
               <motion.div
                 animate={{ rotate: 360 }}
                 transition={{ duration: 20, repeat: Infinity, ease: 'linear' }}
-                className="absolute -top-4 -right-4 w-24 h-24 bg-orange-500/10 rounded-full blur-xl"
+                className="absolute -top-4 -right-4 w-24 h-24 bg-primary-500/5 rounded-sm blur-xl"
               />
               <motion.div
                 animate={{ rotate: -360 }}
                 transition={{ duration: 15, repeat: Infinity, ease: 'linear' }}
-                className="absolute -bottom-4 -left-4 w-32 h-32 bg-amber-500/10 rounded-full blur-xl"
+                className="absolute -bottom-4 -left-4 w-32 h-32 bg-primary-600/5 rounded-sm blur-xl"
               />
             </div>
           </motion.div>
