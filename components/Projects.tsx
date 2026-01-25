@@ -2,19 +2,9 @@
 
 import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { FiExternalLink, FiGithub } from 'react-icons/fi';
 import { useRef, MouseEvent } from 'react';
 
 const projects = [
-  {
-    title: 'Microservice Vote Tracking Application',
-    description:
-      'Microservice-based architecture with APIs for real-time vote tallies. Deployed Flask web app on EC2 with Kubernetes orchestration, achieving 30% performance increase. Integrated Jenkins CI/CD pipeline for resilient AWS infrastructure.',
-    image: '🗳️',
-    technologies: ['Python', 'Flask', 'Kubernetes', 'Jenkins', 'AWS', 'SQL Server'],
-    githubUrl: 'https://github.com/jwalant527',
-    liveUrl: '#',
-  },
   {
     title: 'AWS Fault Injection Testing',
     description:
@@ -135,26 +125,6 @@ function ProjectCard({ project, index }: { project: typeof projects[0]; index: n
           ))}
         </div>
 
-        <div className="flex gap-4">
-          <motion.a
-            href={project.githubUrl}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="flex items-center gap-2 px-4 py-2 bg-dark-100 dark:bg-dark-700 hover:bg-dark-200 dark:hover:bg-dark-600 rounded-lg transition-colors"
-          >
-            <FiGithub className="w-5 h-5" />
-            <span className="text-sm font-medium">Code</span>
-          </motion.a>
-          <motion.a
-            href={project.liveUrl}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="flex items-center gap-2 px-4 py-2 bg-primary-500 hover:bg-primary-600 text-white rounded-lg transition-colors"
-          >
-            <FiExternalLink className="w-5 h-5" />
-            <span className="text-sm font-medium">Live Demo</span>
-          </motion.a>
-        </div>
       </div>
     </motion.div>
   );

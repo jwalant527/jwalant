@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { useState, useEffect } from 'react';
-import { FiGithub, FiLinkedin, FiMail, FiArrowDown } from 'react-icons/fi';
+import { FiLinkedin, FiMail, FiArrowDown } from 'react-icons/fi';
 
 const roles = ['DevOps Enthusiast', 'Platform Engineer at NIH', 'FIFA fanatic'];
 
@@ -129,7 +129,6 @@ export default function Hero() {
               className="flex gap-4"
             >
               {[
-                { icon: FiGithub, href: 'https://github.com/jwalant527', label: 'GitHub' },
                 { icon: FiLinkedin, href: 'https://www.linkedin.com/in/jwalantb/', label: 'LinkedIn' },
                 { icon: FiMail, href: 'mailto:jwalantbhatt1998@gmail.com', label: 'Email' },
               ].map((social, index) => (
