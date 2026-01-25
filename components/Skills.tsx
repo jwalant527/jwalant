@@ -8,40 +8,40 @@ const skillCategories = [
   {
     category: 'Languages',
     skills: [
-      { name: 'Python', level: 95 },
-      { name: 'Bash', level: 85 },
-      { name: 'C/C++', level: 75 },
-      { name: 'SQL/PL-SQL', level: 80 },
+      { name: 'Python', years: 7 },
+      { name: 'Bash', years: 4 },
+      { name: 'C/C++', years: 3 },
+      { name: 'SQL/PL-SQL', years: 5 },
     ],
   },
   {
     category: 'Cloud & Infrastructure',
     skills: [
-      { name: 'AWS', level: 90 },
-      { name: 'Kubernetes', level: 88 },
-      { name: 'Docker', level: 92 },
-      { name: 'Terraform', level: 85 },
+      { name: 'AWS', years: 5 },
+      { name: 'Kubernetes', years: 4 },
+      { name: 'Docker', years: 5 },
+      { name: 'Terraform', years: 3 },
     ],
   },
   {
     category: 'DevOps & CI/CD',
     skills: [
-      { name: 'GitLab CI', level: 90 },
-      { name: 'Jenkins', level: 85 },
-      { name: 'Ansible', level: 82 },
-      { name: 'ArgoCD', level: 88 },
+      { name: 'GitLab CI', years: 4 },
+      { name: 'Jenkins', years: 3 },
+      { name: 'Ansible', years: 3 },
+      { name: 'ArgoCD', years: 3 },
     ],
   },
 ];
 
-function SkillBar({ skill, index, inView }: { skill: { name: string; level: number }; index: number; inView: boolean }) {
+function SkillBar({ skill, index, inView }: { skill: { name: string; years: number }; index: number; inView: boolean }) {
   const [count, setCount] = useState(0);
 
   useEffect(() => {
     if (!inView) return;
 
     let start = 0;
-    const end = skill.level;
+    const end = skill.years;
     const duration = 2000;
     const increment = end / (duration / 16);
 
@@ -56,7 +56,10 @@ function SkillBar({ skill, index, inView }: { skill: { name: string; level: numb
     }, 16);
 
     return () => clearInterval(timer);
-  }, [inView, skill.level]);
+  }, [inView, skill.years]);
+
+  const maxYears = 7;
+  const widthPercentage = (skill.years / maxYears) * 100;
 
   return (
     <motion.div
@@ -67,12 +70,12 @@ function SkillBar({ skill, index, inView }: { skill: { name: string; level: numb
     >
       <div className="flex justify-between mb-2">
         <span className="text-dark-700 dark:text-dark-300 font-medium">{skill.name}</span>
-        <span className="text-primary-500 dark:text-primary-400 font-bold">{count}%</span>
+        <span className="text-primary-500 dark:text-primary-400 font-bold">{count} {count === 1 ? 'year' : 'years'}</span>
       </div>
       <div className="h-3 bg-dark-200 dark:bg-dark-700 rounded-full overflow-hidden">
         <motion.div
           initial={{ width: 0 }}
-          animate={inView ? { width: `${skill.level}%` } : {}}
+          animate={inView ? { width: `${widthPercentage}%` } : {}}
           transition={{ duration: 1.5, delay: index * 0.1, ease: 'easeOut' }}
           className="h-full bg-gradient-to-r from-primary-500 to-purple-600 rounded-full relative"
         >
